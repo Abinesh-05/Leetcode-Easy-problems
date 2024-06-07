@@ -1,0 +1,13 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        ll = []
+        for i in nums:
+            if i not in ll:
+                ll.append(i)
+                
+        # Copy the unique elements back to nums to modify it in place
+        for j in range(len(ll)):
+            nums[j] = ll[j]
+        
+        # Return the length of the list with unique elements
+        return len(ll)
